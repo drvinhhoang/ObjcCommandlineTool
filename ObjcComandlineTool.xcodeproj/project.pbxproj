@@ -12,6 +12,10 @@
 		5ACFEF762A49E07F00A6D951 /* Looping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF752A49E07F00A6D951 /* Looping.m */; };
 		5ACFEF782A49F6E200A6D951 /* MakingDecisions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF772A49F6E200A6D951 /* MakingDecisions.m */; };
 		5ACFEF7A2A4A6BBC00A6D951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF792A4A6BBC00A6D951 /* main.m */; };
+		5ACFEF832A4A93AD00A6D951 /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF822A4A93AD00A6D951 /* ClassA.m */; };
+		5ACFEF862A4AB90200A6D951 /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF852A4AB90200A6D951 /* ClassB.m */; };
+		5ACFEF8A2A4AC3C100A6D951 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF892A4AC3C100A6D951 /* Rectangle.m */; };
+		5ACFEF8E2A4AC52000A6D951 /* Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF8D2A4AC52000A6D951 /* Point.m */; };
 		5AFBF55B2A37589C0037E851 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF55A2A37589C0037E851 /* Fraction.m */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +38,14 @@
 		5ACFEF772A49F6E200A6D951 /* MakingDecisions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakingDecisions.m; sourceTree = "<group>"; };
 		5ACFEF792A4A6BBC00A6D951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5ACFEF7D2A4A6CAF00A6D951 /* Fraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
+		5ACFEF802A4A933A00A6D951 /* ClassA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassA.h; sourceTree = "<group>"; };
+		5ACFEF822A4A93AD00A6D951 /* ClassA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
+		5ACFEF842A4AB8E200A6D951 /* ClassB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
+		5ACFEF852A4AB90200A6D951 /* ClassB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		5ACFEF882A4AC36700A6D951 /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		5ACFEF892A4AC3C100A6D951 /* Rectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
+		5ACFEF8C2A4AC4CF00A6D951 /* Point.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		5ACFEF8D2A4AC52000A6D951 /* Point.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Point.m; sourceTree = "<group>"; };
 		5AFBF5572A37589C0037E851 /* ObjcComandlineTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjcComandlineTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF55A2A37589C0037E851 /* Fraction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +72,46 @@
 			path = TypeAndStatement;
 			sourceTree = "<group>";
 		};
+		5ACFEF7E2A4A931200A6D951 /* Fraction */ = {
+			isa = PBXGroup;
+			children = (
+				5AFBF55A2A37589C0037E851 /* Fraction.m */,
+				5ACFEF7D2A4A6CAF00A6D951 /* Fraction.h */,
+			);
+			path = Fraction;
+			sourceTree = "<group>";
+		};
+		5ACFEF7F2A4A932200A6D951 /* Inheritance */ = {
+			isa = PBXGroup;
+			children = (
+				5ACFEF8B2A4AC4C400A6D951 /* Point */,
+				5ACFEF872A4AC35800A6D951 /* Rectangle */,
+				5ACFEF802A4A933A00A6D951 /* ClassA.h */,
+				5ACFEF822A4A93AD00A6D951 /* ClassA.m */,
+				5ACFEF842A4AB8E200A6D951 /* ClassB.h */,
+				5ACFEF852A4AB90200A6D951 /* ClassB.m */,
+			);
+			path = Inheritance;
+			sourceTree = "<group>";
+		};
+		5ACFEF872A4AC35800A6D951 /* Rectangle */ = {
+			isa = PBXGroup;
+			children = (
+				5ACFEF882A4AC36700A6D951 /* Rectangle.h */,
+				5ACFEF892A4AC3C100A6D951 /* Rectangle.m */,
+			);
+			path = Rectangle;
+			sourceTree = "<group>";
+		};
+		5ACFEF8B2A4AC4C400A6D951 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				5ACFEF8C2A4AC4CF00A6D951 /* Point.h */,
+				5ACFEF8D2A4AC52000A6D951 /* Point.m */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
 		5AFBF54E2A37589C0037E851 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +131,9 @@
 		5AFBF5592A37589C0037E851 /* ObjcComandlineTool */ = {
 			isa = PBXGroup;
 			children = (
-				5AFBF55A2A37589C0037E851 /* Fraction.m */,
+				5ACFEF7F2A4A932200A6D951 /* Inheritance */,
+				5ACFEF7E2A4A931200A6D951 /* Fraction */,
 				5ACFEF792A4A6BBC00A6D951 /* main.m */,
-				5ACFEF7D2A4A6CAF00A6D951 /* Fraction.h */,
 				5ACFEF7B2A4A6BDF00A6D951 /* TypeAndStatement */,
 			);
 			path = ObjcComandlineTool;
@@ -146,9 +198,13 @@
 			files = (
 				5ACFEF762A49E07F00A6D951 /* Looping.m in Sources */,
 				5ACFEF742A49B01400A6D951 /* Calculator.m in Sources */,
+				5ACFEF8A2A4AC3C100A6D951 /* Rectangle.m in Sources */,
 				5ACFEF782A49F6E200A6D951 /* MakingDecisions.m in Sources */,
+				5ACFEF862A4AB90200A6D951 /* ClassB.m in Sources */,
 				5AFBF55B2A37589C0037E851 /* Fraction.m in Sources */,
 				5ACFEF7A2A4A6BBC00A6D951 /* main.m in Sources */,
+				5ACFEF832A4A93AD00A6D951 /* ClassA.m in Sources */,
+				5ACFEF8E2A4AC52000A6D951 /* Point.m in Sources */,
 				5ACFEF722A49A05D00A6D951 /* DataType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
