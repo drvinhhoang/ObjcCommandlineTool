@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5ACFEF722A49A05D00A6D951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF712A49A05D00A6D951 /* main.m */; };
-		5AFBF55B2A37589C0037E851 /* Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF55A2A37589C0037E851 /* Class.m */; };
+		5ACFEF722A49A05D00A6D951 /* DataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF712A49A05D00A6D951 /* DataType.m */; };
+		5ACFEF742A49B01400A6D951 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF732A49B01400A6D951 /* Calculator.m */; };
+		5ACFEF762A49E07F00A6D951 /* Looping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF752A49E07F00A6D951 /* Looping.m */; };
+		5ACFEF782A49F6E200A6D951 /* MakingDecisions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF772A49F6E200A6D951 /* MakingDecisions.m */; };
+		5ACFEF7A2A4A6BBC00A6D951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF792A4A6BBC00A6D951 /* main.m */; };
+		5AFBF55B2A37589C0037E851 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF55A2A37589C0037E851 /* Fraction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5ACFEF712A49A05D00A6D951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5ACFEF712A49A05D00A6D951 /* DataType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataType.m; sourceTree = "<group>"; };
+		5ACFEF732A49B01400A6D951 /* Calculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		5ACFEF752A49E07F00A6D951 /* Looping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Looping.m; sourceTree = "<group>"; };
+		5ACFEF772A49F6E200A6D951 /* MakingDecisions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakingDecisions.m; sourceTree = "<group>"; };
+		5ACFEF792A4A6BBC00A6D951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5ACFEF7D2A4A6CAF00A6D951 /* Fraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
 		5AFBF5572A37589C0037E851 /* ObjcComandlineTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjcComandlineTool; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AFBF55A2A37589C0037E851 /* Class.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Class.m; sourceTree = "<group>"; };
+		5AFBF55A2A37589C0037E851 /* Fraction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +49,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5ACFEF7B2A4A6BDF00A6D951 /* TypeAndStatement */ = {
+			isa = PBXGroup;
+			children = (
+				5ACFEF732A49B01400A6D951 /* Calculator.m */,
+				5ACFEF752A49E07F00A6D951 /* Looping.m */,
+				5ACFEF772A49F6E200A6D951 /* MakingDecisions.m */,
+				5ACFEF712A49A05D00A6D951 /* DataType.m */,
+			);
+			path = TypeAndStatement;
+			sourceTree = "<group>";
+		};
 		5AFBF54E2A37589C0037E851 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +79,10 @@
 		5AFBF5592A37589C0037E851 /* ObjcComandlineTool */ = {
 			isa = PBXGroup;
 			children = (
-				5AFBF55A2A37589C0037E851 /* Class.m */,
-				5ACFEF712A49A05D00A6D951 /* main.m */,
+				5AFBF55A2A37589C0037E851 /* Fraction.m */,
+				5ACFEF792A4A6BBC00A6D951 /* main.m */,
+				5ACFEF7D2A4A6CAF00A6D951 /* Fraction.h */,
+				5ACFEF7B2A4A6BDF00A6D951 /* TypeAndStatement */,
 			);
 			path = ObjcComandlineTool;
 			sourceTree = "<group>";
@@ -122,8 +144,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AFBF55B2A37589C0037E851 /* Class.m in Sources */,
-				5ACFEF722A49A05D00A6D951 /* main.m in Sources */,
+				5ACFEF762A49E07F00A6D951 /* Looping.m in Sources */,
+				5ACFEF742A49B01400A6D951 /* Calculator.m in Sources */,
+				5ACFEF782A49F6E200A6D951 /* MakingDecisions.m in Sources */,
+				5AFBF55B2A37589C0037E851 /* Fraction.m in Sources */,
+				5ACFEF7A2A4A6BBC00A6D951 /* main.m in Sources */,
+				5ACFEF722A49A05D00A6D951 /* DataType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
