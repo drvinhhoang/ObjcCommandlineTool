@@ -15,8 +15,6 @@
 /// Define class's name, methods, properties
 @interface Fraction: NSObject
 
-@property (nonatomic) int custom1;
-@property (nonatomic) int custom2;
 @property int numerator, denominator;
 
 -(void)  print;
@@ -24,6 +22,8 @@
 //-(void)  setDenominator: (int) d;
 //-(int)   numerator;
 //-(int)   denominator;
+-(void)   setTo: (int) n over: (int) d;
 -(double) convertToNum;
+-(void) add: (Fraction *) f;
 
 @end
