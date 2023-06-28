@@ -17,6 +17,7 @@
 		5ACFEF8A2A4AC3C100A6D951 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF892A4AC3C100A6D951 /* Rectangle.m */; };
 		5ACFEF8E2A4AC52000A6D951 /* Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF8D2A4AC52000A6D951 /* Point.m */; };
 		5ACFEF932A4B0F9F00A6D951 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF922A4B0F9F00A6D951 /* Complex.m */; };
+		5ACFEF992A4C20D200A6D951 /* Fraction+MathOps.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFEF982A4C20D200A6D951 /* Fraction+MathOps.m */; };
 		5AFBF55B2A37589C0037E851 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF55A2A37589C0037E851 /* Fraction.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,9 @@
 		5ACFEF8D2A4AC52000A6D951 /* Point.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Point.m; sourceTree = "<group>"; };
 		5ACFEF912A4B0F2000A6D951 /* Complex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
 		5ACFEF922A4B0F9F00A6D951 /* Complex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		5ACFEF972A4C1A8D00A6D951 /* Fraction+MathOps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fraction+MathOps.h"; sourceTree = "<group>"; };
+		5ACFEF982A4C20D200A6D951 /* Fraction+MathOps.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Fraction+MathOps.m"; sourceTree = "<group>"; };
+		5ACFEF9B2A4C24A500A6D951 /* Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Protocol.h; sourceTree = "<group>"; };
 		5AFBF5572A37589C0037E851 /* ObjcComandlineTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjcComandlineTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF55A2A37589C0037E851 /* Fraction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,23 @@
 			path = Polymorphism;
 			sourceTree = "<group>";
 		};
+		5ACFEF962A4C1A6000A6D951 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5ACFEF972A4C1A8D00A6D951 /* Fraction+MathOps.h */,
+				5ACFEF982A4C20D200A6D951 /* Fraction+MathOps.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5ACFEF9A2A4C248C00A6D951 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5ACFEF9B2A4C24A500A6D951 /* Protocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		5AFBF54E2A37589C0037E851 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +172,8 @@
 		5AFBF5592A37589C0037E851 /* ObjcComandlineTool */ = {
 			isa = PBXGroup;
 			children = (
+				5ACFEF9A2A4C248C00A6D951 /* Protocol */,
+				5ACFEF962A4C1A6000A6D951 /* Category */,
 				5ACFEF902A4B0B2400A6D951 /* Polymorphism */,
 				5ACFEF8F2A4B0B1400A6D951 /* Basic Data type */,
 				5ACFEF7F2A4A932200A6D951 /* Inheritance */,
@@ -227,6 +250,7 @@
 				5ACFEF7A2A4A6BBC00A6D951 /* main.m in Sources */,
 				5ACFEF832A4A93AD00A6D951 /* ClassA.m in Sources */,
 				5ACFEF8E2A4AC52000A6D951 /* Point.m in Sources */,
+				5ACFEF992A4C20D200A6D951 /* Fraction+MathOps.m in Sources */,
 				5ACFEF722A49A05D00A6D951 /* DataType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

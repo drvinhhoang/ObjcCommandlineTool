@@ -179,46 +179,46 @@
 //}
 
 // MARK: - Enumeration
+
+#import <Foundation/Foundation.h>
+#import "Fraction.h"
+#import "Fraction+MathOps.h"
+
+@protocol Drawing
+//@required
+-(void) paint;
+-(void) erase;
+@optional
+-(void) outline;
+@end
+
+#define MAX_COUNT 100
+
 int main(int argc, const char *argv[]) {
     @autoreleasepool {
-        enum month { jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec };
+        id <Drawing> currentObject;
+        Rectangle *someRect = [Rectangle new];
+        currentObject = someRect;
+        int gameOver;
+        gameOver = MAX_COUNT;
+        NSLog(@"gameOver: %i", gameOver);
         
-        enum month amonth;
-        int days;
-        
-        NSLog(@"Enter month number: ");
-        scanf("%i", &amonth);
-        
-        switch (amonth) {
-            case jan:
-            case mar:
-            case may:
-            case jul:
-            case aug:
-            case oct:
-            case dec:
-                days = 31;
-                break;
-            case apr:
-            case jun:
-            case sep:
-            case nov:
-                days = 30;
-                break;
-            case feb:
-                days = 28;
-                break;
-            default:
-                NSLog(@"bad month number");
-                days = 0;
-                break;
-        }
-        
-        if (days != 0)
-            NSLog(@"Number of days is %i", days);
-        
-        if (amonth == feb)
-            NSLog(@"...or 29 if it's a leap year.");
     }
     return 0;
 }
+
+
+
+@interface CustomClass : NSObject <Drawing>
+@property int point;
+
+@end
+
+@implementation CustomClass
+
+@synthesize point;
+
+
+
+@end
+

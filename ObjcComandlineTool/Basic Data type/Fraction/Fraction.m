@@ -35,14 +35,6 @@ static int gCounter;
     else return NAN;
 }
 
--(Fraction *) add:(Fraction *)f
-{
-    Fraction *frac = [Fraction new];
-    frac.numerator = numerator * f.denominator + denominator * f.numerator;
-    frac.denominator = denominator * f.denominator;
-    return frac;
-}
-
 -(instancetype) initWith: (int) n over: (int) d {
     self = [super init];
     
