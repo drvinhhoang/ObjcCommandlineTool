@@ -11,6 +11,7 @@
 
 #endif /* Fraction_h */
 
+
 // MARK: - Interface section
 /// Define class's name, methods, properties
 @interface Fraction: NSObject
@@ -25,5 +26,7 @@
 -(void)   setTo: (int) n over: (int) d;
 -(double) convertToNum;
 -(Fraction *) add: (Fraction *) f;
-
+-(instancetype) initWith: (int) n over: (int) d;
++(Fraction *) allocF;
++(int) count;
 @end

@@ -153,12 +153,27 @@ int main(int argc, const char * argv[]) {
 //        [dataValue setTo:2 over:5];
 //        [dataValue print];
         
-        if ([dataValue isMemberOfClass: [Complex class]])
-            [dataValue setReal:10.0 andImaginary:2.5];
-        [dataValue print];
+//        if ([dataValue isMemberOfClass: [Complex class]])
+//            [dataValue setReal:10.0 andImaginary:2.5];
+//        [dataValue print];
+//
+//        BOOL canRespond = [Fraction instancesRespondToSelector:@selector(setTo:over:)];
+//        NSLog(@"can respond %d", canRespond);
         
-        BOOL canRespond = [Fraction instancesRespondToSelector:@selector(setTo:over:)];
-        NSLog(@"can respond %d", canRespond);
+//        Fraction *a = [[Fraction alloc] initWith:1 over:3];
+//        [a print];
+        
+        Fraction *a, *b, *c;
+        
+        NSLog (@"Fractions allocated: %i", [Fraction count]);
+
+        a = [[Fraction allocF] init];
+
+        b = [[Fraction allocF] init];
+
+        c = [[Fraction allocF] init];
+
+        NSLog (@"Fractions allocated: %i", [Fraction count]);
     }
     return 0;
 }

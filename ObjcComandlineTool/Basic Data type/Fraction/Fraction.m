@@ -10,6 +10,9 @@
 
 // MARK: - Implementaion section
 // Start implementation
+
+static int gCounter;
+
 @implementation Fraction
 
 @synthesize numerator, denominator;
@@ -38,6 +41,28 @@
     frac.numerator = numerator * f.denominator + denominator * f.numerator;
     frac.denominator = denominator * f.denominator;
     return frac;
+}
+
+-(instancetype) initWith: (int) n over: (int) d {
+    self = [super init];
+    
+    if (self)
+        [self setTo:n over:d];
+    
+    return self;
+}
+
+-(instancetype) init {
+    return [self initWith:0 over:0];
+}
+
++(Fraction *) allocF {
+    ++gCounter;
+    return [Fraction alloc];
+}
+
++(int) count {
+    return gCounter;
 }
 
 @end

@@ -16,14 +16,12 @@
 
 @synthesize  width, height;
 
-- (void)setWidth:(int)w andHeight:(int)h
-{
+- (void)setWidth:(int)w andHeight:(int)h {
     width = w;
     height = h;
 }
 
-- (void)setOrigin:(XYPoint *)pt
-{
+- (void)setOrigin:(XYPoint *)pt {
     // check if origin == 0, means it had been initialized.
     // 0 tương đương với false => origin == 0 tương đương !origin.
     if (!origin)
@@ -31,21 +29,29 @@
     
     origin.x = pt.x;
     origin.y = pt.y;
+    
+
 }
 
-- (int)area
-{
+- (int)area {
     return  width * height;
 }
 
--(int) perimeter
-{
+-(int) perimeter {
     return (width + height) * 2;
 }
 
-- (XYPoint *)origin
-{
+- (XYPoint *)origin {
     return origin;
 }
+
+-(instancetype) init {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 
 @end
