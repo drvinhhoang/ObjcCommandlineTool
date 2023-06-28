@@ -32,10 +32,12 @@
     else return NAN;
 }
 
--(void) add:(Fraction *)f
+-(Fraction *) add:(Fraction *)f
 {
-    numerator = numerator * f.denominator + denominator * f.numerator;
-    denominator = denominator * f.denominator;
+    Fraction *frac = [Fraction new];
+    frac.numerator = numerator * f.denominator + denominator * f.numerator;
+    frac.denominator = denominator * f.denominator;
+    return frac;
 }
 
 @end

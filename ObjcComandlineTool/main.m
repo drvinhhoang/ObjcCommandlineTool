@@ -73,17 +73,92 @@
 //    return 0;
 //}
 
-int main(int argc, const char *argv[])
-{
+//int main(int argc, const char *argv[])
+//{
+//    @autoreleasepool {
+//        ClassB *b = [ClassB new];
+//        ClassA *a = [ClassA new];
+//
+//        [a initVar];
+//        [a printVar];
+//
+//        [b initVar];
+//        [b printVar];
+//    }
+//    return 0;
+//}
+
+
+// MARK: - Polymorphism
+#import "Fraction.h"
+#import "Complex.h"
+
+//int main(int argc, char * argv[])
+//{
+//    @autoreleasepool {
+//        Fraction *f1 = [Fraction new];
+//        Fraction *f2 = [Fraction new];
+//        Fraction *fracResult;
+//
+//        Complex *c1 = [Complex new];
+//        Complex *c2 = [Complex new];
+//        Complex *compResult;
+//
+//        [f1 setTo:1 over:10];
+//        [f2 setTo:2 over:15];
+//
+//        [c1 setReal:18.0 andImaginary:2.5];
+//        [c2 setReal:-5.0 andImaginary:3.2];
+//
+//        // add and print 2 complex numbers
+//
+//
+//
+//        [c1 print]; NSLog(@"       +"); [c2 print];
+//        NSLog(@"---------");
+//        compResult = [c1 add:c2];
+//        [compResult print];
+//
+//        NSLog(@"\n");
+//
+//        // add and print 2 fractions
+//        [f1 print]; NSLog(@"   +"); [f2 print];
+//        NSLog(@"---");
+//        fracResult = [f1 add:f2];
+//        [fracResult print];
+//    }
+//}
+
+
+// MARK: - Dynamic binding
+
+int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        ClassB *b = [ClassB new];
-        ClassA *a = [ClassA new];
+        id dataValue = [Complex new];
+        Fraction *f1 = [Fraction new];
+        Complex *c1 = [Complex new];
         
-        [a initVar];
-        [a printVar];
+//
+//        [f1 setTo:2 over:5];
+//        [c1 setReal:10.0 andImaginary:2.5];
+//
+//        // first dataValue gets a fraction
+//        dataValue = f1;
+//        [dataValue print];
+//
+//        // now dataValue gets a complex number
+//
+//        dataValue = c1;
+//        [dataValue print];
+//        [dataValue setTo:2 over:5];
+//        [dataValue print];
         
-        [b initVar];
-        [b printVar];
+        if ([dataValue isMemberOfClass: [Complex class]])
+            [dataValue setReal:10.0 andImaginary:2.5];
+        [dataValue print];
+        
+        BOOL canRespond = [Fraction instancesRespondToSelector:@selector(setTo:over:)];
+        NSLog(@"can respond %d", canRespond);
     }
     return 0;
 }
