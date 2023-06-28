@@ -234,47 +234,70 @@
 //    return 0;
 //}
 
-void printMessage (void) {
-    NSLog(@"Hello world!!");
-}
+//void printMessage (void) {
+//    NSLog(@"Hello world!!");
+//}
+//
+//void(^calculateTriagularNumber) (int) = ^(int n) {
+//    int i, triangularNumber = 0;
+//    for (i=1; i <= n; ++i) {
+//        triangularNumber += i;
+//    }
+//
+//    NSLog(@"TriangularNumber %i is %i", n, triangularNumber);
+//};
+//
+//void (^printMess) (void) =
+//^(void)
+//{
+//    NSLog(@"Programming is fun.");
+//};
+//
+//int main(int argc, const char * argv[]) {
+//    @autoreleasepool {
+//
+////        int x = 1233;
+////        int a[] = { [9] = x + 1, [2] = 3, [1] = 2, [0] = 1 };
+////        NSUInteger arraySize = sizeof(a) / sizeof(a[0]);
+////        for (NSUInteger i = 0; i < arraySize; i++) {
+////            NSLog(@"a[%lu] = %d", (unsigned long)i, a[i]);
+////        }
+//
+//        char word[] = { 'H', 'e', 'l', 'l', 'o', '!', '\0' };
+//        //NSLog(@"%s", word);
+//        printMessage();
+//
+//
+//
+//        printMess();
+//
+//        calculateTriagularNumber(20);
+//
+//
+//    }
+//    return 0;
+//}
 
-void(^calculateTriagularNumber) (int) = ^(int n) {
-    int i, triangularNumber = 0;
-    for (i=1; i <= n; ++i) {
-        triangularNumber += i;
-    }
+// MARK: - struct
+struct date {
+    int month;
+    int day;
+    int year;
+};
+
+CGPoint
+
+int main(int argc, const char *argv[]) {
+    struct date today = { .month = 5, .day = 2, .year = 2005 };
     
-    NSLog(@"TriangularNumber %i is %i", n, triangularNumber);
-};
-
-void (^printMess) (void) =
-^(void)
-{
-    NSLog(@"Programming is fun.");
-};
-
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        
-//        int x = 1233;
-//        int a[] = { [9] = x + 1, [2] = 3, [1] = 2, [0] = 1 };
-//        NSUInteger arraySize = sizeof(a) / sizeof(a[0]);
-//        for (NSUInteger i = 0; i < arraySize; i++) {
-//            NSLog(@"a[%lu] = %d", (unsigned long)i, a[i]);
-//        }
-        
-        char word[] = { 'H', 'e', 'l', 'l', 'o', '!', '\0' };
-        //NSLog(@"%s", word);
-        printMessage();
-        
-       
-        
-        printMess();
-        
-        calculateTriagularNumber(20);
-        
-        
-    }
+    NSLog (@"Today's date is %i/%i/%.2i.", today.month, today.day, today.year % 100);
+    
     return 0;
 }
 
+
+struct {
+    int month;
+    int day;
+    int year;
+} dates[100];
