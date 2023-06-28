@@ -132,48 +132,93 @@
 
 // MARK: - Dynamic binding
 
-int main(int argc, const char * argv[]) {
+//int main(int argc, const char * argv[]) {
+//    @autoreleasepool {
+//        id dataValue = [Complex new];
+//        Fraction *f1 = [Fraction new];
+//        Complex *c1 = [Complex new];
+//
+////
+////        [f1 setTo:2 over:5];
+////        [c1 setReal:10.0 andImaginary:2.5];
+////
+////        // first dataValue gets a fraction
+////        dataValue = f1;
+////        [dataValue print];
+////
+////        // now dataValue gets a complex number
+////
+////        dataValue = c1;
+////        [dataValue print];
+////        [dataValue setTo:2 over:5];
+////        [dataValue print];
+//
+////        if ([dataValue isMemberOfClass: [Complex class]])
+////            [dataValue setReal:10.0 andImaginary:2.5];
+////        [dataValue print];
+////
+////        BOOL canRespond = [Fraction instancesRespondToSelector:@selector(setTo:over:)];
+////        NSLog(@"can respond %d", canRespond);
+//
+////        Fraction *a = [[Fraction alloc] initWith:1 over:3];
+////        [a print];
+//
+//        Fraction *a, *b, *c;
+//
+//        NSLog (@"Fractions allocated: %i", [Fraction count]);
+//
+//        a = [[Fraction allocF] init];
+//
+//        b = [[Fraction allocF] init];
+//
+//        c = [[Fraction allocF] init];
+//
+//        NSLog (@"Fractions allocated: %i", [Fraction count]);
+//    }
+//    return 0;
+//}
+
+// MARK: - Enumeration
+int main(int argc, const char *argv[]) {
     @autoreleasepool {
-        id dataValue = [Complex new];
-        Fraction *f1 = [Fraction new];
-        Complex *c1 = [Complex new];
+        enum month { jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec };
         
-//
-//        [f1 setTo:2 over:5];
-//        [c1 setReal:10.0 andImaginary:2.5];
-//
-//        // first dataValue gets a fraction
-//        dataValue = f1;
-//        [dataValue print];
-//
-//        // now dataValue gets a complex number
-//
-//        dataValue = c1;
-//        [dataValue print];
-//        [dataValue setTo:2 over:5];
-//        [dataValue print];
+        enum month amonth;
+        int days;
         
-//        if ([dataValue isMemberOfClass: [Complex class]])
-//            [dataValue setReal:10.0 andImaginary:2.5];
-//        [dataValue print];
-//
-//        BOOL canRespond = [Fraction instancesRespondToSelector:@selector(setTo:over:)];
-//        NSLog(@"can respond %d", canRespond);
+        NSLog(@"Enter month number: ");
+        scanf("%i", &amonth);
         
-//        Fraction *a = [[Fraction alloc] initWith:1 over:3];
-//        [a print];
+        switch (amonth) {
+            case jan:
+            case mar:
+            case may:
+            case jul:
+            case aug:
+            case oct:
+            case dec:
+                days = 31;
+                break;
+            case apr:
+            case jun:
+            case sep:
+            case nov:
+                days = 30;
+                break;
+            case feb:
+                days = 28;
+                break;
+            default:
+                NSLog(@"bad month number");
+                days = 0;
+                break;
+        }
         
-        Fraction *a, *b, *c;
+        if (days != 0)
+            NSLog(@"Number of days is %i", days);
         
-        NSLog (@"Fractions allocated: %i", [Fraction count]);
-
-        a = [[Fraction allocF] init];
-
-        b = [[Fraction allocF] init];
-
-        c = [[Fraction allocF] init];
-
-        NSLog (@"Fractions allocated: %i", [Fraction count]);
+        if (amonth == feb)
+            NSLog(@"...or 29 if it's a leap year.");
     }
     return 0;
 }
