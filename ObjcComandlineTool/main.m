@@ -285,19 +285,111 @@ struct date {
     int year;
 };
 
-CGPoint
+typedef struct date date;
 
-int main(int argc, const char *argv[]) {
-    struct date today = { .month = 5, .day = 2, .year = 2005 };
+void exchange (int *pint1, int *pint2) { int temp;
+    temp = *pint1;
     
-    NSLog (@"Today's date is %i/%i/%.2i.", today.month, today.day, today.year % 100);
+    *pint1 = *pint2;
     
-    return 0;
+    *pint2 = temp;
 }
 
+//int main(int argc, const char *argv[]) {
+//    int count = 10;
+//    int *intPtr = &count;
+//
+//    int x;
+//    x = *intPtr;
+//
+//    NSLog(@"count = %i; x: %i", count, x);
+    
+//    char c = 'Q';
+//    char *charPtr = &c;
+//    NSLog(@"%c %c", c, *charPtr);
+//    c = '/';
+//    NSLog(@"%c %c", c, *charPtr);
+//
+//    date todayDate, *datePtr;
+//    datePtr = &todayDate;
+//
+//    datePtr->day = 21;
+//    datePtr->month = 5;
+//    datePtr->year = 2016;
+//
+//    NSLog(@"date: %i/%i/%.2i", datePtr->day, datePtr->month, datePtr->year % 100);
+    
+//    int i1 = 1, i2 = 100, *p1 = &i1, *p2 = &i2;
+//    NSLog (@"i1 = %i, i2 = %i", i1, i2);
+//    exchange(p1, p2);
+//    NSLog (@"i1 = %i, i2 = %i", i1, i2);
+//    exchange(&i1, &i2);
+//    NSLog (@"i1 = %i, i2 = %i", i1, i2);
+    
+    
+//    @autoreleasepool {
+//        int values[5] = { 1,2,3,4,5};
+//        int *p;
+//      //  p = values;
+//        p = &values[0];
+//        p += 2;
+//        NSLog(@"value: %i", *(p));
+//    }
+//
+//
+//
+//    return 0;
+//}
 
-struct {
-    int month;
-    int day;
-    int year;
-} dates[100];
+//
+//struct {
+//    int month;
+//    int day;
+//    int year;
+//} dates[100];
+
+//int arraySum(int array[], int n) {
+//    int sum = 0, *ptr;
+//    int *arrayEnd = array + n;
+//    for (ptr = array; ptr < arrayEnd; ++ptr) {
+//        sum += *ptr;
+//    }
+//
+//    return sum;
+//}
+//
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+//        int values[10] = { 3, 7, -9, 3, 6, -1, 7, 9, 1, -5 };
+//        NSLog (@"The sum is %i", arraySum (values, 3));
+//
+//    }
+//    return 0;
+//}
+
+void copyString(char *to, char *from) {
+    for (; *from != '\0'; ++from, ++to) {
+        *to = *from;
+    }
+    *to = '\0';
+}
+
+int main(int argc, char * argv[]) {
+    @autoreleasepool {
+       // void copyString (char *to, char *from);
+        
+        NSString *someString = @"some string.";
+        NSLog(someString);
+
+        char string1[] = "A string to be copied.";
+
+        char string2[50];
+
+        copyString (string2, string1);
+        NSLog (@"%s", string2);
+
+        copyString (string2, "So is this.");
+        NSLog (@"%s", string2);
+    }
+    return 0;
+}
