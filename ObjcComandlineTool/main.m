@@ -367,29 +367,49 @@ void exchange (int *pint1, int *pint2) { int temp;
 //    return 0;
 //}
 
-void copyString(char *to, char *from) {
-    for (; *from != '\0'; ++from, ++to) {
-        *to = *from;
-    }
-    *to = '\0';
+//void copyString(char *to, char *from) {
+//    for (; *from != '\0'; ++from, ++to) {
+//        *to = *from;
+//    }
+//    *to = '\0';
+//}
+//
+//int main(int argc, char * argv[]) {
+//    @autoreleasepool {
+//       // void copyString (char *to, char *from);
+//
+//        NSString *someString = @"some string.";
+//        NSLog(someString);
+//
+//        char string1[] = "A string to be copied.";
+//
+//        char string2[50];
+//
+//        copyString (string2, string1);
+//        NSLog (@"%s", string2);
+//
+//        copyString (string2, "So is this.");
+//        NSLog (@"%s", string2);
+//    }
+//    return 0;
+//}
+
+// MARK: - Pointer to function
+
+int lookUp (void) {
+    return 2;
 }
 
-int main(int argc, char * argv[]) {
+
+int main(int argc, const char *argv[]) {
     @autoreleasepool {
-       // void copyString (char *to, char *from);
+        int (*functionPtr) (void);
+        functionPtr = lookUp;
         
-        NSString *someString = @"some string.";
-        NSLog(someString);
+        int val = functionPtr();
+        NSLog(@"val = %i", val);
+        NSLog(@"memory address: %p", functionPtr);
 
-        char string1[] = "A string to be copied.";
-
-        char string2[50];
-
-        copyString (string2, string1);
-        NSLog (@"%s", string2);
-
-        copyString (string2, "So is this.");
-        NSLog (@"%s", string2);
     }
     return 0;
 }
