@@ -279,13 +279,13 @@
 //}
 
 // MARK: - struct
-struct date {
+struct Date {
     int month;
     int day;
     int year;
 };
 
-typedef struct date date;
+typedef struct Date Date;
 
 void exchange (int *pint1, int *pint2) { int temp;
     temp = *pint1;
@@ -396,20 +396,247 @@ void exchange (int *pint1, int *pint2) { int temp;
 
 // MARK: - Pointer to function
 
-int lookUp (void) {
-    return 2;
-}
+//int lookUp (void) {
+//    return 2;
+//}
+//
+//
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+//        int (*functionPtr) (void);
+//        functionPtr = lookUp;
+//
+//        int val = functionPtr();
+//        NSLog(@"val = %i", val);
+//        NSLog(@"memory address: %p", functionPtr);
+//
+//    }
+//    return 0;
+//}
 
+//// MARK: - sizeof
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+//        double a;
+//        int size = sizeof(a);
+//
+//        NSLog(@"size: %i", size);
+//
+//    }
+//    return 0;
+//}
+
+// MARK: - Foundation
+
+// MARK: - NSNumber
+
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+//        NSNumber *myNumber, *floatNumber, *intNumber;
+//        NSInteger myInt;
+//
+//        // integer value
+//        intNumber = [NSNumber numberWithInt:100];
+//        myInt = [intNumber integerValue];
+//        NSLog(@"integer %li", (long) myInt);
+//
+//        // long value
+//
+//        myNumber = [NSNumber numberWithLong:0xabcdef];
+//        NSLog(@"long %ld", [myNumber longValue]);
+//
+//        // char value
+//        myNumber = [NSNumber numberWithChar:'X'];
+//        NSLog(@"char %c", [myNumber charValue]);
+//
+//        // float value
+//        floatNumber = [NSNumber numberWithFloat:100.00];
+//        NSLog(@"float %g", [floatNumber floatValue]);
+//
+//        // wrong access
+//        NSLog(@"%li wrong access ", (long) [myNumber integerValue]);
+//
+//        // Test two Numbers for equality
+//
+//        if ([intNumber isEqualToNumber:floatNumber])
+//            NSLog(@"Numbers are equal");
+//        else
+//            NSLog(@"Number are not equal");
+//
+//        // Test if one Number is <, ==, or > second Number
+//
+//        if ([intNumber compare:myNumber] == NSOrderedDescending)
+//            NSLog(@"Fist number is less than second");
+//
+//    }
+//    return 0;
+//}
+
+
+//// MARK: - String
+//
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+//        NSString *str1 = @"This is string A";
+//        NSString *res;
+//        NSRange subRange;
+//        // Extract first 3 chars from string
+//        res = [str1 substringToIndex: 3];
+//        NSLog (@"First 3 chars of str1: %@", res);
+//        // Extract chars to end of string starting at index 5
+//        res = [str1 substringFromIndex: 5];
+//        NSLog (@"Chars from index 5 of str1: %@", res);
+//        // Extract chars from index 8 through 13 (6 chars)
+//        res = [[str1 substringFromIndex: 8] substringToIndex: 6];
+//        NSLog (@"Chars from index 8 through 13: %@", res);
+//        // An easier way to do the same thing
+//        res = [str1 substringWithRange: NSMakeRange (8, 6)];
+//        NSLog (@"Chars from index 8 through 13: %@", res);
+//        // Locate one string inside another
+//        subRange = [str1 rangeOfString: @"string A"];
+//        NSLog (@"String is at index %lu, length is %lu", subRange.location, subRange.length);
+//
+//        subRange = [str1 rangeOfString: @"string B"];
+//        if (subRange.location == NSNotFound)
+//            NSLog (@"String not found");
+//        else
+//            NSLog (@"String is at index %lu, length is %lu", subRange.location, subRange.length);
+//    }
+//    return 0;
+//}
+
+
+// MARK: - Array
+
+
+// Unmutable array
+//int main(int argc, const char *argv[]) {
+//    int i;
+//    @autoreleasepool {
+//        NSArray *monthNames = @[@"January", @"February", @"March", @"April",
+//                               @"May", @"June", @"July", @"August", @"September",
+//                               @"October", @"November", @"December"];
+//
+//        // Now list all the elements in the array
+//
+//        NSLog(@"Month   Name");
+//        NSLog(@"=====   ====");
+//
+//        for (i=0; i < 12; ++i)
+//            NSLog(@" %2i     %@", i + 1, monthNames[i]);
+//    }
+//    return 0;
+//}
+
+// Mutable array
+
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+//        NSMutableArray *numbers = [NSMutableArray array];
+//        int i;
+//        // Create an array with the numbers 0-9
+//        for (i = 0; i < 10; ++i )
+//       // numbers[i] = @(i);
+//        [numbers addObject:@(i)];
+//        // Sequence through the array and display the values
+//        for (i = 0; i < 10; ++i )
+//            NSLog (@"%@", numbers[i]);
+//        // Look how NSLog can display it with a single %@ format
+//        NSLog (@"====== Using a single NSLog");
+//        NSLog (@"%@", numbers);
+//    }
+//
+//
+//}
+
+
+// MARK: - Address book
+
+#import "AddressCard.h"
+#import "AddressBook.h"
+
+//int main(int argc, char * argv[]) {
+//    @autoreleasepool {
+////        NSString *aName = @"Julia Kochan";
+////        NSString *aEmail = @"jewls337@axlc.com";
+////        AddressCard *card1 = [AddressCard new];
+//////        [card1 setName:aName];
+////        // [card1 setEmail:aEmail];
+////
+//////        card1.name = aName;
+//////        card1.email = aEmail;
+////
+////        [card1 setName:aName andEmail:aEmail];
+////        [card1 print];
+//
+//        NSString *aName = @"Julia Kochan";
+//        NSString *aEmail = @"jewls337@axlc.com";
+//        NSString *bName = @"Tony Iannino";
+//        NSString *bEmail = @"tony.iannino@techfitness.com";
+//        NSString *cName = @"Stephen Kochan";
+//        NSString *cEmail = @"steve@classroomM.com";
+//        NSString *dName = @"Jamie Baker";
+//        NSString *dEmail = @"jbaker@classroomM.com";
+//
+//        AddressCard *card1 = [[AddressCard alloc] init];
+//        AddressCard *card2 = [[AddressCard alloc] init];
+//        AddressCard *card3 = [[AddressCard alloc] init];
+//        AddressCard *card4 = [[AddressCard alloc] init];
+//
+//        // setup a new address book
+//
+//        AddressBook *mybook = [[AddressBook alloc] initWithName:@"Linda's Address Book"];
+//
+//        NSLog(@"Entries in address book after creation: %li", [mybook entries]);
+//
+//        // Now set up four address cards
+//
+//        [card1 setName:aName andEmail:aEmail];
+//        [card2 setName:bName andEmail:bEmail];
+//        [card3 setName:cName andEmail:cEmail];
+//        [card4 setName:dName andEmail:dEmail];
+//
+//        // Add the cards to the address book
+//
+//        [mybook addCard:card1];
+//        [mybook addCard:card2];
+//        [mybook addCard:card3];
+//        [mybook addCard:card4];
+//
+//        NSLog(@"Entries in address book after adding cards %li", [mybook entries]);
+//        [mybook list];
+//
+//    }
+//    return 0;
+//}
+
+// MARK: - NSValue
 
 int main(int argc, const char *argv[]) {
-    @autoreleasepool {
-        int (*functionPtr) (void);
-        functionPtr = lookUp;
-        
-        int val = functionPtr();
-        NSLog(@"val = %i", val);
-        NSLog(@"memory address: %p", functionPtr);
+    Date date;
+    
+    NSValue *dateObj;
+    
+    NSMutableArray *dates = [NSMutableArray array];
+    date.day = 12;
+    date.year = 2024;
+    date.month = 05;
+    
+    dateObj = [NSValue valueWithPointer:&date];
+    [dates addObject:dateObj];
+    
+    Date retrievedDate;
 
-    }
+    [dates[0] getValue:&retrievedDate];
+    
+    
+    NSLog(@"day: %i", retrievedDate.day);
+    NSLog(@"month: %i", retrievedDate.month);
+    NSLog(@"year: %i", retrievedDate.year);
+    
+    
+   
+    
+    
     return 0;
 }

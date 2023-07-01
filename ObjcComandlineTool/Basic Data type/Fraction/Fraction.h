@@ -25,7 +25,7 @@
 //-(int)   denominator;
 -(void)   setTo: (int) n over: (int) d;
 -(double) convertToNum;
--(Fraction *) add: (Fraction *) f;
+//-(Fraction *) add: (Fraction *) f;
 -(instancetype) initWith: (int) n over: (int) d;
 +(Fraction *) allocF;
 +(int) count;
