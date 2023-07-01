@@ -612,31 +612,120 @@ void exchange (int *pint1, int *pint2) { int temp;
 
 // MARK: - NSValue
 
-int main(int argc, const char *argv[]) {
-    Date date;
-    
-    NSValue *dateObj;
-    
-    NSMutableArray *dates = [NSMutableArray array];
-    date.day = 12;
-    date.year = 2024;
-    date.month = 05;
-    
-    dateObj = [NSValue valueWithPointer:&date];
-    [dates addObject:dateObj];
-    
-    Date retrievedDate;
+//int main(int argc, const char *argv[]) {
+//    Date date;
+//
+//    NSValue *dateObj;
+//
+//    NSMutableArray *dates = [NSMutableArray array];
+//    date.day = 12;
+//    date.year = 2024;
+//    date.month = 05;
+//
+//    dateObj = [NSValue valueWithPointer:&date];
+//    [dates addObject:dateObj];
+//
+//    Date retrievedDate;
+//
+//    [dates[0] getValue:&retrievedDate];
+//
+//
+//    NSLog(@"day: %i", retrievedDate.day);
+//    NSLog(@"month: %i", retrievedDate.month);
+//    NSLog(@"year: %i", retrievedDate.year);
+//
+//
+//
+//
+//
+//    return 0;
+//}
 
-    [dates[0] getValue:&retrievedDate];
+// MARK: - Dictionary
+
+//int main(int argc, const char *argv[]) {
+//    @autoreleasepool {
+////        NSDictionary *glossary = [NSDictionary dictionaryWithObjectsAndKeys:
+////                                  @"A class defined so other classes can inherit from it",
+////                                  @"abstract class",
+////                                  @"To implement all the methods defined in a protocol",
+////                                  @"adopt",
+////                                  @"Storing an object for later use",
+////                                  @"archiving", nil ];
+//
+//        NSDictionary *glossary = @{
+//            @"abstract class" : @"A class defined so other classes can inherit from it",
+//            @"adopt" : @"To implement all the methods defined in a protocol",
+//            @"archiving" : @"Storing an object for later use"
+//        };
+//
+//        // Print all key-value pairs from the dictionary
+//
+//        for ( NSString *key in glossary ) NSLog (@"%@: %@", key, [glossary objectForKey: key]);
+//
+//    }
+//    return 0;
+//}
+
+// MARK: - Set objects
+
+@interface NSSet (Printing)
+-(void) print;
+@end
+
+@implementation NSSet (Printing)
+-(void) print {
+    printf ("{ ");
     
-    
-    NSLog(@"day: %i", retrievedDate.day);
-    NSLog(@"month: %i", retrievedDate.month);
-    NSLog(@"year: %i", retrievedDate.year);
-    
-    
-   
-    
-    
+    for (NSNumber *element in self)
+        printf (" %li ", (long) [element integerValue]);
+    printf ("} \n");
+}
+@end
+
+int main(int argc, const char *argv[]) {
+    @autoreleasepool {
+        NSMutableSet *set1 = [NSMutableSet setWithObjects: @1, @3, @5, @10, nil];
+        NSSet *set2 = [NSSet setWithObjects: @-5, @100, @3, @5, nil];
+        NSSet *set3 = [NSSet setWithObjects: @12, @200, @3, nil];
+        
+        NSSet *strSet = [NSSet setWithObjects:@"a", @"b", nil];
+        [strSet print];
+        NSString *someStr = [[NSString alloc] initWithString:@"hello"];
+        
+        NSLog (@"set1: ");
+        [set1 print];
+        NSLog (@"set2: ");
+        [set2 print];
+        // Equality test
+        if ([set1 isEqualToSet: set2] == YES)
+            NSLog (@"set1 equals set2");
+        else
+            NSLog (@"set1 is not equal to set2");
+        // Membership test
+        if ([set1 containsObject: @10] == YES)
+            NSLog (@"set1 contains 10");
+        else
+            NSLog (@"set1 does not contain 10");
+        if ([set2 containsObject: @10] == YES)
+            NSLog (@"set2 contains 10");
+        else
+            NSLog (@"set2 does not contain 10");
+        // add and remove objects from mutable set set1
+        [set1 addObject: @4];
+        [set1 removeObject:@10];
+        NSLog (@"set1 after adding 4 and removing 10: ");
+        [set1 print];
+        // get intersection of two sets
+        [set1 intersectSet: set2];
+        NSLog (@"set1 intersect set2: ");
+        [set1 print];
+        // union of two sets
+        [set1 unionSet:set3];
+        NSLog (@"set1 union set3: ");
+        [set1 print];
+    }
     return 0;
 }
+
+
