@@ -57,5 +57,11 @@ static int gCounter;
     return gCounter;
 }
 
+-(id) copyWithZone:(NSZone *)zone {
+    Fraction *newFract = [[[self class] allocWithZone:zone] init];
+    [newFract setTo:numerator over:denominator];
+    return newFract;
+}
+
 @end
 // End implementaion

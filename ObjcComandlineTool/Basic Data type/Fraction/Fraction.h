@@ -14,9 +14,10 @@
 
 // MARK: - Interface section
 /// Define class's name, methods, properties
-@interface Fraction: NSObject
+@interface Fraction: NSObject <NSCopying>
 
 @property int numerator, denominator;
+@property (null_re) NSString *name;
 
 -(void)  print;
 //-(void)  setNumerator: (int) n;
